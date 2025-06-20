@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/Logo 2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/cadastroItem.css"  />
+
+    <title>Cadastro de Item</title>
+  
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="../images/Logo 2.png" alt="Logo" width="80" height="40" />
+      </div>
+      <div class="navbar-button">
+        <div class="button-container">
+          <button id="centralButton" class="green-button">Central do Administrador</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+      <div class="form-title">Cadastro de Item</div>
+
+      <form id="form" class="form" action="/itemCadastrado" method="POST">
+
+        <div class="form-content">
+            <label for="etapa">Etapa</label>
+            <div class="custom-select">
+            <select id="etapa" name="etapa" required>        
+              <option value="" disabled selected>Selecionar</option>
+              <% etapas.forEach(function(etapa) { %>
+              <option value="<%= etapa.idEtapa %>"><%= etapa.nomeEtapa%></option>
+              <% }); %>
+            </select>
+            </div>
+          </div>
+
+      <div class="form-content">
+        <label for="descricao">Descrição Item</label>
+        <input
+          type="text"
+          id="descricao"
+          name="descricao"
+          placeholder=" Descricao Sobre o Item"
+        />
+      </div>
+
+      <div class="form-content">
+        <label for="valor">Valor do Item</label>
+        <input
+          type="text"
+          id="valorInput"
+          name="valor"
+          placeholder=" 00,00"
+        />   
+    </div>
+
+    <button type="submit" class="green-button">Registrar Item</button>
+    <br /><br />
+</form>
+    <script src="../scripts/visualizarEtapa.js"></script>
+  </body>
+</html>
+

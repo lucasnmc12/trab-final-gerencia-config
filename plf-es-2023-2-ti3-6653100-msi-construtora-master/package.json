@@ -1,0 +1,29 @@
+{
+  "name": "plf-es-2023-2-ti3-6653100-msi-construtora",
+  "version": "1.0.0",
+  "description": "[Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-2-ti3-6653100-msi-construtora.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-2-ti3-6653100-msi-construtora/issues"
+  },
+  "homepage": "https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-2-ti3-6653100-msi-construtora#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.1",
+    "sequelize": "^6.33.0"
+  }
+}

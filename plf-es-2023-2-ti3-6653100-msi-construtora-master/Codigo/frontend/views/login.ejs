@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="../images/Logo 2.png" type="image/x-icon" />
+
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="../images/Logo 2.png" alt="Logo" width="80" height="40" />
+      </div>
+      <div class="navbar-button">
+        <div class="button-container">
+          <button id="loginButton" class="green-button">Login</button>
+          <button id="cadastrarButton1" class="green-button">
+            Registra-se
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container1">
+      <div class="container1">
+        <div class="imagem1"><img src="../images/Group.png" /></div>
+      </div>
+
+      <div class="formularioLogin">
+        <div class="codepen-form">
+          <section>
+            <div class="login-container">
+              <h2>Seja bem-vindo!</h2>
+
+              <form
+                id="form"
+                class="form"
+                action="/login"
+                method="POST"
+              >
+                <div class="invalid-credentials">
+                  <% if (typeof error !== 'undefined') { %>
+                  <p class="error-message"><%= error %></p>
+                  <% } %>
+                </div>
+                <div class="input-box">
+                  <span class="icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </span>
+
+                  <div class="form-content">
+                    <input type="text" id="email" name="email" />
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+
+                <div class="input-box">
+                  <span class="icon">
+                    <i class="fa-solid fa-lock"></i>
+                  </span>
+
+                  <div class="form-content">
+                    <input type="password" id="senha" name="senha" />
+                    <label for="senha">Senha</label>
+                  </div>
+                </div>
+
+                <div class="remember-forgot">
+                  <label> <input type="checkbox" /> Lembrar-me </label>
+
+                  <a href="#">Esqueceu sua senha?</a>
+                </div>
+                <br />
+                <button class="submit" type="submit">Login</button>
+              </form>
+
+              <div class="create-account">
+                <p class="no-account">Ainda não tem uma conta?</p>
+                <a class="register-link" href="/cadastroCliente">Registre-se</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../scripts/login.js"></script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/acompanhamentoObra.css" />
+    <link rel="icon" href="../images/Logo 2.png" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <title>Acompanhamento de Obra</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="../images/Logo 2.png" alt="Logo" width="80" height="40" />
+      </div>
+
+      <div class="navbar-button">
+        <div class="button-container">
+          <button id="exportarPDF" class="green-button">Exportar</button>
+          <button id="imprimir" class="green-button">Imprimir</button>
+          <button id="centralAdmButton" class="green-button">Central do Administrador</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="form-title">Cronograma de Acompanhamento</div>
+      <table class="custom-table">
+        <tr class="table-top">
+          <td>Etapa</td>
+          <td>Valor</td>
+          <td>Data de Início</td>
+          <td>Data de Fechamento</td> 
+          <td>Status</td>
+        </tr>
+        <% etapas.forEach(function(etapa) { %>
+        <tr>
+          <td><%= etapa.etapa.nomeEtapa %></td>
+          <td>R$ <%= etapa.totalValorItens.toFixed(2) %></td>
+          <% function formatarData(data) {
+            const dataFormatada = new Date(data);
+            dataFormatada.setDate(dataFormatada.getDate() + 1); 
+            const dia = dataFormatada.getDate().toString().padStart(2, '0');
+            const mes = (dataFormatada.getMonth() + 1).toString().padStart(2, '0');
+            const ano = dataFormatada.getFullYear();
+            return `${dia}/${mes}/${ano}`;
+          } %>
+          <td>
+            <%= formatarData(etapa.etapa.dataInicio) %>
+          </td>
+          <td>
+            <%= etapa.etapa.dataFim ? formatarData(etapa.etapa.dataFim) : 'Não cadastrado' %>
+          </td>
+          <td><%= etapa.etapa.statusObra ? 'Em andamento' : 'Fechada' %></td>
+        </tr>
+        <% }); %>
+      </table>
+      <br><br>
+      <br><br>
+      <div class="button-container2">
+        <a href="/cadastroEtapa" class="green-button">Cadastrar Novas Etapas</a>
+        <a href="/visualizarEtapa" class="green-button">Visualizar Todas Etapas</a>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <h2>Valor de Produção:</h2>
+        <p id="valorProducaoPlaceholder"></p>
+      </div>
+      <div class="card">
+        <h2>Metragem do Imóvel:</h2>
+        <p><%= tamanhoTerreno %> m²</p>
+      </div>
+      <div class="card">
+        <h2>Custo por m²:</h2>
+        <p id="custoPorMetroQuadradoPlaceholder"></p>
+      </div>
+    </div>
+  </body>
+  <script src="../scripts/acompanhamentoObra.js"></script>
+</html>

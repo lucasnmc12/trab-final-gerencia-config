@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background: #000000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 80%;
+}
+
+.navbar-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.navbar-item {
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  margin: 0 10px;
+}
+
+.navbar-item:hover {
+  color: #62c500;
+}
+
+.navbar-button {
+  order: 3;
+}
+
+.button-container1 {
+  display: flex;
+  align-items: center;
+}
+
+.button-container1 button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  border: 1px solid #62c500;
+  background-color: transparent;
+  color: #62c500;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button-container1 button:hover {
+  background-color: #62c500;
+  color: white;
+}
+
+.button-container1 button:active {
+  background-color: #62c500;
+  color: white;
+}
+.container {
+  background-color: #161616;
+  border-radius: 10px;
+  margin: 30px;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border: 2px solid #393939;
+  font-family: "Montserrat", sans-serif;
+  padding: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  overflow-x: auto;
+}
+
+.etapa-title, .form-title {
+  font-size: 30px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #161616;
+  white-space: nowrap;
+}
+
+.custom-table td {
+  padding: 20px;
+  text-align: center;
+  color: white;
+  border: 1px solid #424242;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centraliza os botões */
+  gap: 15px; /* Espaço entre os botões */
+  flex-wrap: wrap; /* Permite que os botões passem para a próxima linha em telas menores */
+  margin-top: 20px;
+}
+
+
+.green-button,
+.button-1,
+.button-2,
+.button-3 {
+  font-weight: 600;
+  padding: 12px 24px; /* Espaçamento interno dos botões */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px; /* Margem abaixo dos botões */
+  color: white;
+  background-color: #62c500; /* Cor de fundo padrão para botões verdes */
+  border: none;
+  margin-right: 10px; /* Espaçamento entre botões */
+}
+
+.button-4{
+  font-weight: 400;
+  padding: 5px 10px; /* Reduzi o espaçamento interno para tornar o botão mais estreito */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px; /* Margem abaixo dos botões */
+  width: auto; /* Agora o botão se ajustará ao conteúdo */
+  color: #ddd;
+  background-color: #161616;
+  border: 2px solid #393939;
+  display: inline-block; /* Para garantir que os botões fiquem um ao lado do outro */
+  margin-right: 5px; /* Espaçamento entre botões */
+}
+/* Personalizações adicionais para botões específicos */
+.button-1 {
+  background-color: #E7D10C;
+}
+
+.button-2 {
+  background-color: #C50000;
+}
+
+.truePaymentBtn {
+  background-color: #62c500;
+}
+
+.falsePaymentBtn {
+  background-color: #6a6969;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+
+  .custom-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .green-button,
+  .button-1,
+  .button-2,
+  .button-3 {
+    width: auto; /* Torna a largura auto para se ajustar ao conteúdo */
+    margin-bottom: 10px; /* Margem entre os botões */  
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.card {
+  width: 260px;
+  height: 150px;
+  border-radius: 17px;
+  background-color: #161616;
+  border: 2px solid #393939;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+}
+
+
+.card h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card p {
+  margin-top: 30px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsividade para a container dos cartões */
+@media screen and (max-width: 768px) {
+  .card-container {
+    justify-content: center;
+  }
+
+  .card {
+    width: 80%; /* Ou outro valor que se ajuste melhor ao seu layout */
+    margin-bottom: 20px;
+  }
+}
+
+/* Contêiner para centralizar os botões */
+.centralized-button-container {
+  display: flex;
+  justify-content: center; /* Alinha os botões horizontalmente ao centro */
+  align-items: center; /* Alinha os botões verticalmente ao centro */
+  flex-direction: column; /* Os botões são empilhados verticalmente */
+  height: 100vh; /* Usa 100% da altura da tela */
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* Estilos para os botões dentro do contêiner centralizado */
+.centralized-button-container .green-button,
+.centralized-button-container .button-1,
+.centralized-button-container .button-2 {
+  margin-bottom: 10px; /* Espaçamento abaixo de cada botão */
+  width: auto; /* Largura ajusta ao conteúdo do botão */
+}
+
+@media (max-width: 768px) {
+  .centralized-button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .centralized-button-container .green-button,
+  .centralized-button-container .button-1,
+  .centralized-button-container .button-2 {
+    width: auto; /* Ajusta a largura para auto em dispositivos móveis */
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/Logo 2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/cadastroEtapa.css"  />
+
+    <title>Cadastro de Etapa</title>
+  
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="../images/Logo 2.png" alt="Logo" width="80" height="40" />
+      </div>
+      <div class="navbar-button">
+        <div class="button-container">
+          <button id="centralButton" class="green-button">Central do Administrador</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+      <div class="form-title">Cadastro de Etapa</div>
+
+      <form id="form" class="form" action="/etapaCadastrada" method="POST">
+
+      <div class="form-content">
+        <label for="nome">Nome da Etapa:</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Etapa 1"
+        />
+      </div>
+
+      <div class="form-content">
+        <label for="data">Data Início</label>
+        <input
+          type="date"
+          id="dataInicio"
+          name="dataInicio"
+          placeholder="  00 / 00 / 0000"
+        />
+      </div>
+
+      <div class="form-content">
+        <label for="data">Data Fim</label>
+        <input
+          type="date"
+          id="dataFim"
+          name="dataFim"
+          placeholder="  00 / 00 / 0000"
+        />
+      </div>
+
+      <div class="form-content">
+        <label for="status">Status</label>
+        <div class="radio-buttons">
+          <div class="radio-option">
+            <input
+              type="radio"
+              id="ativo"
+              name="status"
+              value=true
+            />
+            <label for="ativo">Ativo</label>
+          </div>
+      
+          <div class="radio-option">
+            <input
+              type="radio"
+              id="inativo"
+              name="status"
+              value=false
+            />
+            <label for="inativo">Inativo</label>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+
+    <button type="submit" class="green-button">Registrar Etapa</button>
+    <br /><br />
+</form>
+    <script src="../scripts/cadastroFornecedor.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../images/Logo 2.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../styles/editarMaterial.css" />
+
+    <title>Editar Obras</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="../images/Logo 2.png" alt="Logo" width="80" height="40" />
+      </div>
+      <div class="navbar-button">
+        <div class="button-container">
+          <button id="centralButton" class="green-button">Central do Administrador</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+      <div class="form-title">Editar Obra</div>
+
+      <form id="form" class="form" method="POST" action="/editarObra/<%= obra.idObra %>">
+        <div class="form-content">
+          <label for="nomeE">Endereço</label>
+          <input
+            type="text"
+            id="endereco"
+            name="endereco"
+            value="<%= obra.enderecoObra %>"
+          />
+        </div>
+        <div class="form-content">
+          <label for="nomeC">Cidade</label>
+          <input
+            type="text"
+            id="cidade"
+            name="cidade"
+            value="<%= obra.cidadeObra %>"
+          />
+        </div>
+        <div class="form-content">
+          <label for="nomeT">Tamanho do terreno em m²</label>
+          <input
+            type="text"
+            id="terreno"
+            name="terreno"
+            value="<%= obra.tamanhoTerrenoObra %>"
+          />
+        </div>
+        <div class="form-content">
+          <label for="qtadeC">Quantidade de cômodos</label>
+          <input
+            type="number"
+            id="nComodos"
+            name="nComodos"
+            value="<%= obra.qtdComodosObra %>"
+          />
+        </div>   
+        <div class="form-content">
+          <label for="nomeG">Garagem?</label>
+          <div class="radio-buttons">
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="garagemSim"
+                name="garagem"
+                value="true"
+                <% if (obra.garagemObra === true) { %>checked<% } %>
+              />
+              <label for="garagemSim">Sim</label>
+            </div>
+            <div class="radio-option">
+              <input
+                type="radio"
+                id="garagemNao"
+                name="garagem"
+                value="false"
+                <% if (obra.garagemObra === false) { %>checked<% } %>
+              />
+              <label for="garagemNao">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="green-button">Salvar Alterações</button>
+      </form>      
+  <br /><br />
+</div>
+  </body>
+  <script src="../scripts/cadastroObra.js"></script>
+</html>
