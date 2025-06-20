@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  body{
+    background: #000000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    flex-direction: column;
+  }
+  
+  .container{
+    background-color:#000000;
+    border-radius: 10px;
+    margin: 30px;
+    max-width: 750px;
+    width: 100%;
+    box-sizing: 0 3px 5px rgba(0,0,0, 0.5);
+    overflow: hidden;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    padding-left: 20px; 
+    padding-right: 20px; 
+  }
+  
+  .form-title {
+    font-size: 40px;
+    color: white;
+    margin-top: 30px;
+    font-family: "Montserrat", sans-serif; 
+    text-align: center; 
+    font-weight: bolder;
+  }
+
+  .form{
+    padding: 50px;
+    background-color: #000000;
+  }
+  
+  .form-content{
+    padding-bottom: 10px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .form-content label{
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: medium;
+  }
+  
+  .form-content input{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 18px;
+    background-color: #000000;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+    
+  }
+  
+  .form-content a{
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    visibility: hidden;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+.form label{
+    color:#FFF;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+}
+
+.green-button {
+    background-color: #62c500;
+    color: white;
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 12px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: medium;
+  }
+
+  .btn2{
+    background-color: #62c500;
+    color: white;
+    border: none;
+    padding: 12px 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .container{
+    max-width: 90%;
+    }
+    
+  }

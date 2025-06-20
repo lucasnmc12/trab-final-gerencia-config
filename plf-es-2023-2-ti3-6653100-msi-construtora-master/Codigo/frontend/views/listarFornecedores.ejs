@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/listarFornecedores.css" />
+    <link rel="icon" href="../images/Logo 2.png" type="image/x-icon" />
+    <title>Listar Fornecedores</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="../images/Logo 2.png" alt="Logo" width="80" height="40" />
+      </div>
+      <div class="navbar-button">
+        <div class="button-container1">
+          <button id="centralButton" class="green-button">Central do Administrador</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-title">Fornecedores</div>
+    <div class="container">
+      <table class="custom-table">
+        <tr class="table-top">
+          <td>CNPJ</td>
+          <td>Nome da Empresa</td>
+          <td>Ação</td>
+        </tr>
+        <% fornecedores.forEach(function(fornecedor) { %>
+        <tr>
+          <td><%= fornecedor.cnpj %></td>
+          <td><%= fornecedor.nomeFornecedor %></td>
+          <td class="button-container">
+            <button
+              class="button-1 detalhes-btn"
+              data-cnpj="<%= fornecedor.cnpj %>"
+            >
+              Detalhes
+            </button>
+            <a
+              href="/editarFornecedor/<%= fornecedor.idFornecedor %>"
+              class="button-2"
+              >Editar</a
+            >
+            <form
+              method="POST"
+              action="/fornecedor/<%= fornecedor.idFornecedor %>?_method=DELETE"
+            >
+              <button class="button-3" type="submit">Excluir</button>
+            </form>
+          </td>
+        </tr>
+        <div
+          class="detalhes-card-container"
+          id="detalhes-card-<%= fornecedor.cnpj %>"
+        >
+          <div class="detalhes-card">
+            
+            <h2><%= fornecedor.nomeFornecedor %></h2>
+            <p>CNPJ: <%= fornecedor.cnpj %></p>
+            <p>Telefone: <%= fornecedor.telefoneFornecedor %></p>
+            <p>Email: <%= fornecedor.emailFornecedor %></p>
+            <p>Site: <%= fornecedor.siteFornecedor %></p>
+            <button class="fechar-detalhes-btn">Fechar</button>
+          </div>
+        </div>
+        <% }); %>
+      </table>
+    </div>
+    <a href="/cadastroFornecedor" class="green-button"
+      >Cadastrar novo fornecedor</a
+    >
+    <br /><br />
+  </body>
+  <script src="../scripts/listarFornecedores.js"></script>
+</html>

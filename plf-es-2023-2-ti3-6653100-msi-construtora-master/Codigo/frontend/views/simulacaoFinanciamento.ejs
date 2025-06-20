@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="icon" href="../images/Logo 2.png" type="image/x-icon">
+  <link rel="stylesheet" href="../styles/simulacaoFinanciamento.css"  />
+  
+  <title>Simulação de Financiamento</title>
+
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-logo">
+      <img src="../images/Logo 2.png" alt="Logo" width="80" height="40" />
+    </div>
+    <div class="navbar-button">
+      <div class="button-container">
+        <button id="centralButton" class="green-button">Central do Cliente</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    
+    <div class="form-title">Simulação de custo de obra</div>
+
+    <form id="form" class="form" action="/financiamentoSimulado" method="POST">
+
+      <div class="form-content">
+        <label for="terreno">Tamanho do terreno</label>
+        <input
+          type="text"
+          id="terreno"
+          name="terreno"
+          placeholder="  0m²"
+        />
+      </div>
+
+      <div class="form-content">
+        <label for="comodos">Quantidade de cômodos</label>
+        <input
+          type="text"
+          id="comodos"
+          name="comodos"
+          placeholder="  0"
+        />
+      </div>
+
+      <div class="form-content">
+        <label for="garagem">Garagem</label>
+        <div class="radio-buttons">
+          <div class="radio-option">
+            <input
+              type="radio"
+              id="sim"
+              name="garagem"
+              value=true
+            />
+            <label for="sim">Sim</label>
+          </div>
+      
+          <div class="radio-option">
+            <input
+              type="radio"
+              id="nao"
+              name="garagem"
+              value=false
+            />
+            <label for="nao">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button type="submit" class="button-1" id="buttonSubmit1">Simular</button>
+        <button type="button" class="button-2" id="buttonSubmit2">Limpar</button>
+      </div>
+
+      <div class="container-2">
+        <div class="form-content">
+            <label for="customaterial">Custo de materiais</label>
+            <div id="custoMaterial"></div>
+        </div>
+    
+        <div class="form-content">
+            <label for="customaodeobra">Custo de mão de obra</label>
+            <div id="custoMaoDeObra"></div>
+        </div>
+    
+        <div class="form-content">
+            <label for="custototal">Custo total</label>
+            <div id="custoTotal"></div>
+        </div>
+    </div>
+    
+    <div class="attention-container">
+        <p class="attention-text"><span class="red-text">Atenção!</span> Todos os resultados exibidos são apenas simulações e podem variar no momento da realização da sua construção!</p>
+    </div>
+
+     
+  </form>
+ </body>
+ <script src="../scripts/simulacaoFinanciamento.js"></script>
+</html>

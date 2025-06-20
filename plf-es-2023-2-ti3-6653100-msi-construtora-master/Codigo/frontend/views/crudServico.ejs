@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../images/Logo 2.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../styles/crudServico.css" />
+    <title>CRUD Serviço</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">
+        <img src="../images/Logo 2.png" alt="Logo" width="80" height="40" />
+      </div>
+      <div class="navbar-button">
+        <div class="button-container1">
+          <button id="centralButton" class="green-button">Central do Administrador</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-title">Lista de Serviços</div>
+    <div class="container">
+      <table class="custom-table">
+        <tr class="table-top">
+          <td>ID Serviço</td>
+          <td>Id Obra</td>
+          <td>Tipo de Serviço</td>
+          <td>Valor</td>
+          <td>Data de Contratação</td>
+          <td>Ação</td>
+        </tr>
+        <% servicos.forEach(function(servico) { %>
+        <tr>
+          <% function formatarData(data) {
+            const dataFormatada = new Date(data);
+            dataFormatada.setDate(dataFormatada.getDate() + 1); // Adiciona um dia à data
+            const dia = dataFormatada.getDate().toString().padStart(2, '0');
+            const mes = (dataFormatada.getMonth() + 1).toString().padStart(2, '0');
+            const ano = dataFormatada.getFullYear();
+            return `${dia}/${mes}/${ano}`;
+          } %>
+          <td><%= servico.idServico %></td>
+          <td><%= servico.obra.idObra %></td>
+          <td><%= servico.tipoServico %></td>
+          <td>R$<%= servico.valorServico %></td>
+          <td><%= formatarData(servico.dataContratacao) %></td>
+
+          <td class="button-container">
+            
+            <!--IMPORTANTE-->
+            <button class="button-1 detalhes-btn" data-servico-id="<%=servico.idServico %>">Detalhes</button>
+            <a href="/editarServico/<%= servico.idServico %>" class="button-2">Editar</a>
+            <form method="post" action="/excluirServico/<%= servico.idServico %>">
+              <button class="button-3 deleteBtn" type="submit">Excluir</button>
+            </form>
+          </td>       
+        </tr>
+        <div
+          class="detalhes-card-container"
+          id="detalhes-card-<%= servico.idServico %>"
+        >
+          <div class="detalhes-card">
+            
+            <h2>Serviço de id: <%= servico.idServico %></h2>
+            <p>Descrição: <%= servico.descricaoServico %></p>
+          
+            <button class="fechar-detalhes-btn">Fechar</button>
+          </div>
+        </div>
+        <% }); %>
+      </table>
+    </div>
+    <a href="/cadastroServico" class="green-button">Cadastrar novo serviço</a>
+    <br /><br />
+  </body>
+  <script src="../scripts/cadastroServico.js"></script>
+</html>

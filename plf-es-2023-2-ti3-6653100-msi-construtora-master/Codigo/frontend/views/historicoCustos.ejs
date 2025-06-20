@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/listarFornecedores.css" />
+    <link rel="icon" href="../images/Logo 2.png" type="image/x-icon" />
+    <title>Histórico de Custos</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-button">
+        <button class="green-button">Central do Usuário</button>
+      </div>
+      <div class="navbar-logo">
+        <img src="../images/Logo 2.png" alt="Logo" width="80" height="40" />
+      </div>
+    </div>
+
+    <div class="form-title">Histórico de Custos</div>
+    <div class="container">
+      <table class="custom-table">
+        <tr class="table-top">
+          <td>ID</td>
+          <td>Custo por m²</td>
+          <td>Custo por cômodos</td>
+          <td>Custo por garagem</td>
+          <td>Criado em</td>
+        </tr>
+        <% custos.forEach(function(custo) { %>
+        <tr>
+          <td><%= custo.idCusto %></td>
+          <td><%= custo.custoMetro %></td>
+          <td><%= custo.custoComodo %></td>
+          <td><%= custo.custoGaragem %></td>
+          <td><%= new Date(custo.createdAt).toLocaleString() %></td>
+            </form>
+          </td>
+        </tr>
+        <% }); %>
+      </table>
+    </div>
+    <a href="/cadastroCusto" class="green-button"
+      >Cadastrar novo custo</a
+    >
+    <br /><br />
+  </body>
+  <script src="../scripts/editarBase.js"></script>
+</html>
