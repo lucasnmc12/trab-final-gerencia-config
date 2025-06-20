@@ -4,7 +4,11 @@
   "description": "[Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.]",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   },
   "repository": {
     "type": "git",
